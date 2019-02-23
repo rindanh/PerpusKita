@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter myPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         //Add titles to each tab
-        myPagerAdapter.addFragment(new BorrowFragment(),"Pinjam ");
-        myPagerAdapter.addFragment(new BooksFragment(),"Cari");
-        myPagerAdapter.addFragment(new ProfileFragment(), "Profil");
+        myPagerAdapter.addFragment(new BorrowFragment(),null);
+        myPagerAdapter.addFragment(new BooksFragment(),null);
+        myPagerAdapter.addFragment(new ProfileFragment(), null);
 
         //add adapter to pager
         pager.setAdapter(myPagerAdapter);
@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
         tabs.setTabMode(TabLayout.MODE_FIXED);
 
         int[] tabIcon = {
-                R.drawable.borrow_icon,
-                R.drawable.search_book,
-                R.drawable.profile_person
+                R.drawable.ic_book_24dp,
+                R.drawable.ic_search_24dp,
+                R.drawable.ic_person_24dp
         };
 
         for (int i = 0; i<tabIcon.length;i++){
