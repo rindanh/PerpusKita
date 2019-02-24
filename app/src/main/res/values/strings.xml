@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">PerpusKita</string>
-<<<<<<< HEAD
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-=======
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -18,5 +16,4 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
->>>>>>> 48b963497d41ab55f8f3f7b991d7d8643732a753
 </resources>
