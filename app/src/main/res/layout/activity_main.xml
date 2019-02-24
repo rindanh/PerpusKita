@@ -19,14 +19,5 @@
         android:background="@color/colorPrimary"
         app:tabIndicatorColor="@color/colorAccent"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go To Login"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="425dp"
-        android:onClick="launchSplashActivity"/>
-
 </RelativeLayout>
 
