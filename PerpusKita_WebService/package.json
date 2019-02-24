@@ -1,0 +1,35 @@
+{
+  "name": "qrcode-preevent",
+  "version": "1.0.0",
+  "description": "Backend for QR code scanner",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "setup": "node setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adhipradhana/qrcode.git"
+  },
+  "author": "adhipradhana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adhipradhana/qrcode/issues"
+  },
+  "homepage": "https://github.com/adhipradhana/qrcode#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "mysql2": "^1.6.4",
+    "qr-image": "^3.2.0",
+    "sequelize": "^4.42.0",
+    "zip-a-folder": "0.0.7"
+  }
+}

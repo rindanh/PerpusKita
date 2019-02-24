@@ -1,0 +1,39 @@
+.navbar { 
+    background:#222538;
+}
+
+.nav-link { 
+    color: #f4f4f4; 
+    cursor: pointer;
+}
+
+.active {
+    background: #f4f4f4; 
+    color: #222538; 
+}
+
+.navbar-brand { 
+    color: #f4f4f4; 
+}
+
+.nav-link{ 
+    margin-right: 1em !important;
+}
+
+.nav-link:hover{ 
+    background: #f4f4f4; 
+    color: #222538; 
+}
+
+.navbar-collapse{ 
+    justify-content: flex-end;
+}
+
+.navbar-toggler{  
+    background:#fff !important;
+}
+
+#content-container {
+    margin-top: 7.5%;
+    margin-left: 5%;
+}

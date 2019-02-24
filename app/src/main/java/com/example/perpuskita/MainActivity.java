@@ -2,13 +2,20 @@ package com.example.perpuskita;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
     //deklarasi variabel
     private TabLayout tabs;
     private ViewPager pager;
+
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +57,11 @@ public class MainActivity extends AppCompatActivity {
             TabLayout.Tab tab = tabs.getTabAt(i);
             if (tab != null) tab.setIcon(tabIcon[i]);
         }
+    }
+
+    public void launchSplashActivity(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
