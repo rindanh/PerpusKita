@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
+    <link rel="icon" href="/static/favicon.ico">
+</header>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top ">  
+        <div class="navbar-brand">Admin</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">     
+            <ul class="navbar-nav mr-4">
+                <li class="nav-item">
+                    <a class="nav-link active" data-value="dashboard" href="/admin/dashboard">Dashboard</a>        
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link" data-value="book" href="/admin/book">Book</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" data-value="library" href="/admin/library">Library</a>
+                </li>   
+                <li class="nav-item"> 
+                    <a class="nav-link" data-value="logout" href="/admin/logout">Logout</a>         
+                </li>  
+            </ul> 
+       </div>
+    </nav>
+    <div id="content-container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a id="book-tab" class="nav-link active content-tab" data-toggle="tab" href="#book">Book</a>
+            </li>
+            <li class="nav-item">
+                <a id="library-tab" class="nav-link content-tab" data-toggle="tab" href="#library">Library</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="book" class="container tab-pane active"><br>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Author</th>
+                            <th>Library</th>
+                            <th>Token</th>
+                            <th>File</th>
+                            <th>Attended</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-table-book">
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="library" class="container tab-pane fade"><br>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-table-library">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <button id="download-button" type="button" class="btn btn-primary">DOWNLOAD BOOK</button>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
