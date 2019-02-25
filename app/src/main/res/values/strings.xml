@@ -38,5 +38,6 @@
     <string name="wanttoregister">Click here if you want to register</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account</string>
-    <string name="focus_mode">FOCUS MODE</string>
+    <string name="focus_mode">MODE FOKUS</string>
+    <string name="keterangan">Letakkan HP kamu dengan layar menghadap ke atas</string>
 </resources>
