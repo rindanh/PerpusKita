@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +26,7 @@ public class ProfileFragment extends Fragment {
     private Button btnLogout;
     private FirebaseAuth auth;
     private static final String LOG_TAG = LoginActivity.class.getSimpleName();
+    private TextView mName;
 
 
     public ProfileFragment() {
@@ -50,15 +52,12 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+//        FirebaseUser mFirebaseUser = auth.getCurrentUser();
+//        mName = (TextView) v.findViewById(R.id.name);
+//        Toast.makeText(getContext(), mFirebaseUser.getDisplayName(), Toast.LENGTH_LONG).show();
+//        mName.setText(mFirebaseUser.getDisplayName());
         return v;
     }
-//
-//    @Override
-//    public void onClick(View v) {
-//        if (v.getId()==R.id.logout_button)
-//            auth.signOut();
-//    }
-
-
 
 }
