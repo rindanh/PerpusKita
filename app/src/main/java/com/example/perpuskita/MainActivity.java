@@ -59,9 +59,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void launchSplashActivity(View view) {
-        Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
 }

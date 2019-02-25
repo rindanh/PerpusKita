@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "290205992215",
+    "firebase_url": "https://perpuskita-cd9ac.firebaseio.com",
+    "project_id": "perpuskita-cd9ac",
+    "storage_bucket": "perpuskita-cd9ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290205992215:android:05655ca787789e89",
+        "android_client_info": {
+          "package_name": "com.example.perpuskita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290205992215-tvq2vgaj3i34l2t5ei0ldthnhl6b4e0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.perpuskita",
+            "certificate_hash": "cbfcbad33069be7be20254a17562ad027748cf1d"
+          }
+        },
+        {
+          "client_id": "290205992215-hb9ng20dvb3r33ibgiq7k6ttkukqbh3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDK8fteDQY7kkPg3_7awk3R7WK18rftHk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290205992215-hb9ng20dvb3r33ibgiq7k6ttkukqbh3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

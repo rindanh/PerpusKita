@@ -34,7 +34,6 @@ public class BorrowFragment extends Fragment {
         recyclerView = v.findViewById(R.id.recyclerview);
 
         Button b = (Button) v.findViewById(R.id.fab);
-        b.setOnClickListener(this);
 
         Books book = new Books();
         book.setTitle("Totto-chan");
@@ -58,14 +57,5 @@ public class BorrowFragment extends Fragment {
 
         return v;
     }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fab:
 
-
-                break;
-        }
-    }
-}
 }
