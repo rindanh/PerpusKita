@@ -1,11 +1,14 @@
 package com.example.perpuskita;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,7 @@ public class BooksFragment extends Fragment {
 
     SearchView search;
     RecyclerView recyclerView;
+    private FloatingActionButton focusButton;
 
 
     public BooksFragment() {
@@ -52,6 +56,14 @@ public class BooksFragment extends Fragment {
         final LinearLayoutManager llm = new LinearLayoutManager (getContext());
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(recyclerViewBooksAdapter);
+
+        focusButton = (FloatingActionButton) v.findViewById(R.id.fab);
+        focusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), FocusActivity.class));
+            }
+        });
 
         return v;
 

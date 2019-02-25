@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.perpuskita">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.light"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +17,14 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".FocusActivity"
+                  android:parentActivityName=".MainActivity">
+                    <meta-data
+                        android:name="android.support.PARENT_ACTIVITY"
+                        android:value="com.example.perpuskita.MainActivity" />
         </activity>
-        <activity android:name=".BooksDetails"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".BooksDetails" />
         <activity android:name=".SettingsActivity" />
         <activity
             android:name=".LoginActivity"
@@ -22,6 +33,7 @@
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
