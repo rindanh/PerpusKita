@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +8,25 @@
     tools:context=".FocusActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/yourein"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="YOU ARE IN" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yourein"
+        android:layout_weight="1"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:text="@string/focus_mode" />
 
     <TextView
@@ -19,4 +34,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
