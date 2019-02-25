@@ -49,7 +49,7 @@ public class BorrowFragment extends Fragment {
         listOfBooks.add(book);
         listOfBooks.add(book);
 
-        RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(listOfBooks);
+        RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(listOfBooks, getContext());
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager llm = new LinearLayoutManager (getContext());
         recyclerView.setLayoutManager(llm);
