@@ -3,6 +3,7 @@ package com.example.perpuskita;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -30,7 +31,7 @@ public class ProfileFragment extends Fragment {
     private FirebaseAuth auth;
     private static final String LOG_TAG = LoginActivity.class.getSimpleName();
     private TextView mName;
-
+    private SharedPreferences myPrefs;
 
 
     public ProfileFragment() {
@@ -57,7 +58,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        myPrefs = getSharedPreferences("prefID", Context.MODE_PRIVATE);
+        myPrefs = getContext().getSharedPreferences("prefID", Context.MODE_PRIVATE);
+        boolean check = myPrefs.getBoolean("prefKey", false);
 
 
         settings= v.findViewById(R.id.settings);
@@ -70,10 +72,11 @@ public class ProfileFragment extends Fragment {
                     }
                 }
         );
-
-        FirebaseUser mFirebaseUser = auth.getCurrentUser();
-        mName = (TextView) v.findViewById(R.id.name);
-        mName.setText(mFirebaseUser.getDisplayName());
+        if (!check) {
+            FirebaseUser mFirebaseUser = auth.getCurrentUser();
+            mName = (TextView) v.findViewById(R.id.name);
+            mName.setText(mFirebaseUser.getEmail());
+        }
         return v;
     }
 
