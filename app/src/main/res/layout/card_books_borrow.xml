@@ -24,7 +24,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:layout_marginBottom="13dp"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -58,6 +57,14 @@
                 android:id="@+id/place"
                 android:textSize="12sp" />
 
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:text="Share to twitter"
+                android:textSize="10sp"
+                android:layout_gravity="end"
+                android:textAlignment="center"
+                />
         </LinearLayout>
 
     </LinearLayout>
