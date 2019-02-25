@@ -31,9 +31,6 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
 //         ambil data boolean dr shared preferences
         boolean check = myPrefs.getBoolean("prefKey", false);
         switch_email.setChecked(check);
-
-
-//
     }
 
     @Override

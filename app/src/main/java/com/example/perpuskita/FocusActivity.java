@@ -114,7 +114,6 @@ public class FocusActivity extends AppCompatActivity {
 
             }
         };
->>>>>>> c408e244da4a950e0eb8fb4619280c624186f313
 
         exitButton = (Button) findViewById(R.id.buttonExit);
         exitButton.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,7 @@
 package com.example.perpuskita;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -55,6 +56,9 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+        myPrefs = getSharedPreferences("prefID", Context.MODE_PRIVATE);
+
 
         settings= v.findViewById(R.id.settings);
 
