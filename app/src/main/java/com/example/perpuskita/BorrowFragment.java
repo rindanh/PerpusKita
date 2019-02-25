@@ -3,6 +3,7 @@ package com.example.perpuskita;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class BorrowFragment extends Fragment {
 
     RecyclerView recyclerView;
+    private CardView cardDetails;
 
     public BorrowFragment() {
         // Required empty public constructor
@@ -33,7 +35,7 @@ public class BorrowFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_borrow, container, false);
         recyclerView = v.findViewById(R.id.recyclerview);
 
-        Button b = (Button) v.findViewById(R.id.fab);
+        btnDetails = v.findViewById(R.id.fab);
 
         Books book = new Books();
         book.setTitle("Totto-chan");
