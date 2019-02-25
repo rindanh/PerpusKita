@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BooksDetails"></activity>
+        <activity android:name=".BooksDetails"
+            android:label="Books Detail"></activity>
         <activity android:name=".SettingsActivity" />
         <activity
             android:name=".LoginActivity"

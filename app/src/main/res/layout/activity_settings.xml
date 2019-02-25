@@ -4,6 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:background="@color/colorGreyBackground">
+    <PreferenceScreen
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.preference.PreferenceScreen
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <SwitchPreferenceCompat
+                app:key="notifications"
+                app:title="Enable message notifications"/>
+
+        </androidx.preference.PreferenceScreen>
+    </PreferenceScreen>
 
 </android.support.constraint.ConstraintLayout>

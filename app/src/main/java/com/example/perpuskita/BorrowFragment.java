@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,6 +32,10 @@ public class BorrowFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_borrow, container, false);
         recyclerView = v.findViewById(R.id.recyclerview);
+
+        Button b = (Button) v.findViewById(R.id.fab);
+        b.setOnClickListener(this);
+
         Books book = new Books();
         book.setTitle("Totto-chan");
         book.setReturnDate("25 Februari 2019");
@@ -53,5 +58,14 @@ public class BorrowFragment extends Fragment {
 
         return v;
     }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab:
 
+
+                break;
+        }
+    }
+}
 }
