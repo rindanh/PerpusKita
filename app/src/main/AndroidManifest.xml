@@ -3,6 +3,7 @@
     package="com.example.perpuskita">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-feature
         android:name="android.hardware.sensor.gyroscope"
         android:required="true" />
@@ -24,7 +25,10 @@
                         android:value="com.example.perpuskita.MainActivity" />
         </activity>
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".BooksDetails" />
+        <activity android:name=".QRCodeActivity"></activity>
+        <activity
+            android:name=".BooksDetails"
+            android:label="Books Detail" />
         <activity android:name=".SettingsActivity" />
         <activity
             android:name=".LoginActivity"
@@ -33,7 +37,6 @@
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
