@@ -3,7 +3,7 @@
     package="com.example.perpuskita">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature
         android:name="android.hardware.sensor.gyroscope"
         android:required="true" />

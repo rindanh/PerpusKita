@@ -1,7 +1,9 @@
 package com.example.perpuskita;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +24,7 @@ public class BorrowFragment extends Fragment {
 
     RecyclerView recyclerView;
     private CardView cardDetails;
+    private FloatingActionButton btnAdd;
 
     public BorrowFragment() {
         // Required empty public constructor
@@ -34,8 +37,6 @@ public class BorrowFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_borrow, container, false);
         recyclerView = v.findViewById(R.id.recyclerview);
-
-        btnDetails = v.findViewById(R.id.fab);
 
         Books book = new Books();
         book.setTitle("Totto-chan");
@@ -57,6 +58,16 @@ public class BorrowFragment extends Fragment {
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(recyclerViewBorrowAdapter);
 
+        btnAdd= v.findViewById(R.id.add);
+        btnAdd.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getContext(), QRCodeActivity.class));
+                        getActivity().finish();
+                    }
+                }
+        );
         return v;
     }
 
