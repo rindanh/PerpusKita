@@ -1,22 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
+    android:layout_centerInParent="true"
+    android:background="@color/colorAccent"
     tools:context=".FocusActivity">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="80sp"
         android:text="@string/focus_mode" />
-
     <TextView
-        android:id="@+id/showValue"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Ayo baca!\nJangan main HP" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/keterangan" />
+
+    <Button
+        android:id="@+id/buttonLight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical" />
-</android.support.constraint.ConstraintLayout>
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Cek Kondisi Intensitas Cahaya di Tempatmu!" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Tekan untuk keluar dari mode fokus" />
+
+
+</LinearLayout>

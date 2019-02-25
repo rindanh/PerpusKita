@@ -9,6 +9,8 @@ import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,8 @@ public class FocusActivity extends AppCompatActivity {
     private SensorEventListener lightSensorListener;
     private float maxValue;
     private TextView lightTextView;
+    private Button exitButton;
+    private Button lightButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +51,8 @@ public class FocusActivity extends AppCompatActivity {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 // More code goes here
-                if(sensorEvent.values[0] > 0.5f) { // anticlockwise
-                    getWindow().getDecorView().setBackgroundColor(Color.BLUE);
-                } else if(sensorEvent.values[0] < -0.5f) { // clockwise
-                    getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
+                if(sensorEvent.values[0] > 0.5f || sensorEvent.values[0] < -0.5f) { // anticlockwise
+                    Toast.makeText(getApplicationContext(), "Jangan main HP!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -80,6 +82,47 @@ public class FocusActivity extends AppCompatActivity {
 //
 //            }
 //        };
+
+        maxValue = lightSensor.getMaximumRange();
+//        lightTextView = (TextView) findViewById(R.id.showValue);
+
+        lightButton = (Button) findViewById(R.id.buttonLight);
+        lightSensorListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                final float value = sensorEvent.values[0];
+                String vv = Float.toString(value);
+                lightButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (value>20) {
+                            Toast.makeText(getApplicationContext(), "Cahaya di tempatmu cocok untuk tempat membaca", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "PINDAH! Cahaya di tempatmu tidak cocok untuk tempat membaca", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+//                lightTextView.setText(vv);
+
+                // between 0 and 255
+                int newValue = (int) (255f * value / maxValue);
+//                getWindow().getDecorView().setBackgroundColor(Color.rgb(newValue, newValue, newValue));
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {
+
+            }
+        };
+>>>>>>> c408e244da4a950e0eb8fb4619280c624186f313
+
+        exitButton = (Button) findViewById(R.id.buttonExit);
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
