@@ -29,6 +29,7 @@ public class ProfileFragment extends Fragment {
     private TextView mName;
 
 
+
     public ProfileFragment() {
         // Required empty public constructor
     }
