@@ -64,7 +64,6 @@ public class BorrowFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getContext(), QRCodeActivity.class));
-                        getActivity().finish();
                     }
                 }
         );

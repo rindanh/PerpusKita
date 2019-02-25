@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 
@@ -35,10 +36,13 @@ public class QRCodeActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result result){
-        Log.d("handleResultQR","handleResult: " + result.getText());
-        Intent intent = new Intent();
-        intent.putExtra("token",result.getText());
-        setResult(RESULT_OK,intent);
+//        Log.d("handleResultQR","handleResult: " + result.getText());
+//        Intent intent = new Intent();
+//        intent.putExtra("token",result.getText());
+//        setResult(RESULT_OK,intent);
+//        finish();
+
+        Toast.makeText(this, result.getText(), Toast.LENGTH_SHORT).show();
         finish();
     }
 }

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class ProfileFragment extends Fragment {
 
     private Button btnLogout;
+    private ImageView settings;
     private FirebaseAuth auth;
     private static final String LOG_TAG = LoginActivity.class.getSimpleName();
     private TextView mName;
@@ -53,6 +55,17 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+        settings= v.findViewById(R.id.settings);
+
+        settings.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getContext(), SettingsActivity.class));
+                    }
+                }
+        );
 
         FirebaseUser mFirebaseUser = auth.getCurrentUser();
         mName = (TextView) v.findViewById(R.id.name);
