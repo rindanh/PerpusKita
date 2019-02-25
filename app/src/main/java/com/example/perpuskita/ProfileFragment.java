@@ -54,10 +54,9 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-//        FirebaseUser mFirebaseUser = auth.getCurrentUser();
-//        mName = (TextView) v.findViewById(R.id.name);
-//        Toast.makeText(getContext(), mFirebaseUser.getDisplayName(), Toast.LENGTH_LONG).show();
-//        mName.setText(mFirebaseUser.getDisplayName());
+        FirebaseUser mFirebaseUser = auth.getCurrentUser();
+        mName = (TextView) v.findViewById(R.id.name);
+        mName.setText(mFirebaseUser.getDisplayName());
         return v;
     }
 
