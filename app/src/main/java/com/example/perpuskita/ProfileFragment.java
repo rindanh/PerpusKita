@@ -17,6 +17,8 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +29,6 @@ public class ProfileFragment extends Fragment {
     private FirebaseAuth auth;
     private static final String LOG_TAG = LoginActivity.class.getSimpleName();
     private TextView mName;
-
 
 
     public ProfileFragment() {
@@ -56,7 +57,7 @@ public class ProfileFragment extends Fragment {
 
         FirebaseUser mFirebaseUser = auth.getCurrentUser();
         mName = (TextView) v.findViewById(R.id.name);
-        mName.setText(mFirebaseUser.getDisplayName());
+        mName.setText(mFirebaseUser.getEmail());
         return v;
     }
 
