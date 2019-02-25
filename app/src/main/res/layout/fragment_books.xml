@@ -44,125 +44,10 @@
             app:defaultQueryHint="Masukkan nama buku..."
             android:background="#FFFFFF"/>
 
-        <android.support.v7.widget.CardView
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <android.support.v7.widget.AppCompatImageView
-                    android:layout_width="50dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/books_icon"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="3dp"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="13dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <!-- TODO: Update blank fragment layout -->
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Totto-Chan: The Little Girl at the Window"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Waktu pengembalian : 25 Februari 2019"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Perpustakaan Pusat ITB"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <android.support.v7.widget.AppCompatImageView
-                    android:layout_width="50dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/books_icon"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="3dp"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="13dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <!-- TODO: Update blank fragment layout -->
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Totto-Chan: The Little Girl at the Window"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Waktu pengembalian : 25 Februari 2019"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Perpustakaan Pusat ITB"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerview"/>
 
     </LinearLayout>
 
@@ -175,7 +60,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
-
-        android:src="@drawable/ic_add"
+        android:src="@drawable/no_phone"
         app:backgroundTint="@color/colorPrimary" />
 </RelativeLayout>

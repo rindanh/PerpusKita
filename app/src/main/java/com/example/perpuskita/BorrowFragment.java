@@ -3,9 +3,14 @@ package com.example.perpuskita;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -13,6 +18,7 @@ import android.view.ViewGroup;
  */
 public class BorrowFragment extends Fragment {
 
+    RecyclerView recyclerView;
 
     public BorrowFragment() {
         // Required empty public constructor
@@ -22,8 +28,30 @@ public class BorrowFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_borrow, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_borrow, container, false);
+        recyclerView = v.findViewById(R.id.recyclerview);
+        Books book = new Books();
+        book.setTitle("Totto-chan");
+        book.setReturnDate("25 Februari 2019");
+        book.setPlace("Perpustakaan Pusat ITB");
+
+        ArrayList<Books> listOfBooks = new ArrayList<Books>();
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+
+        RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(listOfBooks);
+        recyclerView.setHasFixedSize(true);
+        final LinearLayoutManager llm = new LinearLayoutManager (getContext());
+        recyclerView.setLayoutManager(llm);
+        recyclerView.setAdapter(recyclerViewBorrowAdapter);
+
+        return v;
     }
 
 }
