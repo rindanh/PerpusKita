@@ -40,11 +40,11 @@ public class FocusActivity extends AppCompatActivity {
             Toast.makeText(this, "The device has no gyroscope sensor !", Toast.LENGTH_SHORT).show();
             finish();
         }
-        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-        if (lightSensor == null) {
-            Toast.makeText(this, "The device has no light sensor !", Toast.LENGTH_SHORT).show();
-            finish();
-        }
+//        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+//        if (lightSensor == null) {
+//            Toast.makeText(this, "The device has no light sensor !", Toast.LENGTH_SHORT).show();
+//            finish();
+//        }
 
         // Create a listener
          gyroscopeSensorListener = new SensorEventListener() {
@@ -62,6 +62,27 @@ public class FocusActivity extends AppCompatActivity {
         };
 
         // max value for light sensor
+//        maxValue = lightSensor.getMaximumRange();
+//        lightTextView = (TextView) findViewById(R.id.showValue);
+//
+//        lightSensorListener = new SensorEventListener() {
+//            @Override
+//            public void onSensorChanged(SensorEvent sensorEvent) {
+//                float value = sensorEvent.values[0];
+//                String vv = Float.toString(value);
+//                lightTextView.setText(vv);
+//
+//                // between 0 and 255
+//                int newValue = (int) (255f * value / maxValue);
+////                getWindow().getDecorView().setBackgroundColor(Color.rgb(newValue, newValue, newValue));
+//            }
+//
+//            @Override
+//            public void onAccuracyChanged(Sensor sensor, int i) {
+//
+//            }
+//        };
+
         maxValue = lightSensor.getMaximumRange();
 //        lightTextView = (TextView) findViewById(R.id.showValue);
 
@@ -110,12 +131,12 @@ public class FocusActivity extends AppCompatActivity {
         // Register the listener
         sensorManager.registerListener(gyroscopeSensorListener,
                 gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(lightSensorListener, lightSensor, SensorManager.SENSOR_DELAY_FASTEST);
+//        sensorManager.registerListener(lightSensorListener, lightSensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
     @Override
     protected void onPause() {
         super.onPause();
         sensorManager.unregisterListener(gyroscopeSensorListener);
-        sensorManager.unregisterListener(lightSensorListener);
+//        sensorManager.unregisterListener(lightSensorListener);
     }
 }
