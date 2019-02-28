@@ -4,7 +4,7 @@ package com.example.perpuskita;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BaseResponse {
+public class BaseResponse<T> {
     @SerializedName("status")
     @Expose
     private String status;
@@ -13,12 +13,12 @@ public class BaseResponse {
     private String message;
     @SerializedName("data")
     @Expose
-    private User user;
+    private T data;
 
-    public BaseResponse(String status, String message, User user) {
+    public BaseResponse(String status, String message, T data) {
         this.status = status;
         this.message = message;
-        this.user = user;
+        this.data = data;
     }
 
     public String getMessage() {
@@ -37,11 +37,11 @@ public class BaseResponse {
         this.status = status;
     }
 
-    public User getUser() {
-        return user;
+    public T getData() {
+        return data;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(T data) {
+        this.data = data;
     }
 }

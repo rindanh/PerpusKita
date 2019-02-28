@@ -24,10 +24,10 @@ import java.util.List;
 
 public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerViewBorrowAdapter.ViewHolder> {
 
-    public List<Books> list;
+    public List<Book> list;
     private Context context;
 
-    public RecyclerViewBorrowAdapter(List<Books> list, Context context) {
+    public RecyclerViewBorrowAdapter(List<Book> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -42,17 +42,17 @@ public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final Books books = list.get(i);
+        final Book books = list.get(i);
 
-        viewHolder.title.setText(books.getTitle());
-        viewHolder.return_date.setText(dateToString(books.getReturnDate()));
-        viewHolder.place.setText(books.getPlace());
+        viewHolder.title.setText(books.getName());
+        viewHolder.return_date.setText(""/*dateToString(books.getCreatedAt())*/);
+        viewHolder.place.setText(books.getName());
 
         viewHolder.btnTwitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Sharing to twitter..", Toast.LENGTH_SHORT).show();
-                String str = "Aku telah meminjam " + books.getTitle() + " dari " + books.getPlace() + ". Ayo membaca!";
+                String str = "Aku telah meminjam " + books.getName() + " dari " + books.getName() + ". Ayo membaca!";
                 shareTwitter(str);
             }
         });

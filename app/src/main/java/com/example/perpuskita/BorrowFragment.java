@@ -44,12 +44,12 @@ public class BorrowFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_borrow, container, false);
         recyclerView = v.findViewById(R.id.recyclerview);
 
-        Books book = new Books();
-        book.setTitle("Totto-chan");
-        book.setReturnDate(convertToDate("2019-02-25"));
-        book.setPlace("Perpustakaan Pusat ITB");
+        Book book = new Book();
+        book.setName("Totto-chan");
+        //book.setReturnDate(convertToDate("2019-02-25"));
+        //book.setPlace("Perpustakaan Pusat ITB");
 
-        ArrayList<Books> listOfBooks = new ArrayList<Books>();
+        ArrayList<Book> listOfBooks = new ArrayList<Book>();
         listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
@@ -58,10 +58,10 @@ public class BorrowFragment extends Fragment {
         listOfBooks.add(book);
         listOfBooks.add(book);
 
-        Books book2 = new Books();
-        book2.setTitle("Kalkulus");
-        book2.setReturnDate(convertToDate("2019-03-01"));
-        book2.setPlace("Perpustakaan Pusat ITB");
+        Book book2 = new Book();
+        book.setName("Kalkulus");
+        //book.setReturnDate(convertToDate("2019-03-01"));
+        //book.setPlace("Perpustakaan Pusat ITB");
         listOfBooks.add(book2);
 
         RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(listOfBooks, getContext());
