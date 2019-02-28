@@ -17,6 +17,9 @@ import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerViewBorrowAdapter.ViewHolder> {
@@ -42,7 +45,7 @@ public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerView
         final Books books = list.get(i);
 
         viewHolder.title.setText(books.getTitle());
-        viewHolder.return_date.setText(books.getReturnDate());
+        viewHolder.return_date.setText(dateToString(books.getReturnDate()));
         viewHolder.place.setText(books.getPlace());
 
         viewHolder.btnTwitter.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +120,11 @@ public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerView
             Log.wtf("AdapterBorrow", "UTF-8 should always be supported", e);
             return "";
         }
+    }
+
+    public String dateToString(Date date){
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+        return dateFormat.format(date);
     }
 
 }

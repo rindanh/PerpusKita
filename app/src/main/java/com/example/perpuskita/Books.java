@@ -1,9 +1,11 @@
 package com.example.perpuskita;
 
+import java.util.Date;
+
 public class Books {
     private String title;
     private String details;
-    private String returnDate;
+    private Date returnDate;
     private String place;
     private String position;
 
@@ -26,11 +28,11 @@ public class Books {
         this.details = details;
     }
 
-    public String getReturnDate() {
+    public Date getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(String returnDate) {
+    public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
     }
 

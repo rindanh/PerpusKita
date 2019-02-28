@@ -14,7 +14,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -25,6 +30,7 @@ public class BorrowFragment extends Fragment {
     RecyclerView recyclerView;
     private CardView cardDetails;
     private FloatingActionButton btnAdd;
+    private TextView date_return;
 
     public BorrowFragment() {
         // Required empty public constructor
@@ -40,7 +46,7 @@ public class BorrowFragment extends Fragment {
 
         Books book = new Books();
         book.setTitle("Totto-chan");
-        book.setReturnDate("25 Februari 2019");
+        book.setReturnDate(convertToDate("2019-02-25"));
         book.setPlace("Perpustakaan Pusat ITB");
 
         ArrayList<Books> listOfBooks = new ArrayList<Books>();
@@ -52,11 +58,21 @@ public class BorrowFragment extends Fragment {
         listOfBooks.add(book);
         listOfBooks.add(book);
 
+        Books book2 = new Books();
+        book2.setTitle("Kalkulus");
+        book2.setReturnDate(convertToDate("2019-03-01"));
+        book2.setPlace("Perpustakaan Pusat ITB");
+        listOfBooks.add(book2);
+
         RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(listOfBooks, getContext());
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager llm = new LinearLayoutManager (getContext());
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(recyclerViewBorrowAdapter);
+
+        //menampilkan tanggalnya
+//        date_return = (TextView) v.findViewById(R.id.return_date);
+//        date_return.setText(dateToString(listOfBooks.get(0)));
 
         btnAdd= v.findViewById(R.id.add);
         btnAdd.setOnClickListener(
@@ -69,5 +85,18 @@ public class BorrowFragment extends Fragment {
         );
         return v;
     }
+
+    public Date convertToDate(String date) {
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        Date t;
+        try {
+            t = ft.parse(date);
+            return t;
+        } catch (ParseException e) {
+            System.out.println("Unparseable using " + ft);
+            return null;
+        }
+    }
+
 
 }
