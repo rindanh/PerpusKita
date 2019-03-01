@@ -24,6 +24,7 @@ public class BooksFragment extends Fragment {
     SearchView search;
     RecyclerView recyclerView;
     private FloatingActionButton focusButton;
+    private SearchView textSearch;
 
 
     public BooksFragment() {
@@ -43,13 +44,13 @@ public class BooksFragment extends Fragment {
         //book.setPlace("Perpustakaan Pusat ITB");
 
         ArrayList<Book> listOfBooks = new ArrayList<Book>();
+        /*listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
-        listOfBooks.add(book);
-        listOfBooks.add(book);
+        listOfBooks.add(book);*/
 
         RecyclerViewBooksAdapter recyclerViewBooksAdapter= new RecyclerViewBooksAdapter(listOfBooks);
         recyclerView.setHasFixedSize(true);
@@ -64,6 +65,9 @@ public class BooksFragment extends Fragment {
                 startActivity(new Intent(getContext(), FocusActivity.class));
             }
         });
+
+        //textSearch = (SearchView) v.findViewById(R.id.search);
+        //textSearch.getQuery()
 
         return v;
 
