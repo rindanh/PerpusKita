@@ -17,14 +17,17 @@ import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerViewBorrowAdapter.ViewHolder> {
 
-    public List<Books> list;
+    public List<Borrow> list;
     private Context context;
 
-    public RecyclerViewBorrowAdapter(List<Books> list, Context context) {
+    public RecyclerViewBorrowAdapter(List<Borrow> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -39,17 +42,17 @@ public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final Books books = list.get(i);
+        final Borrow borrow = list.get(i);
 
-        viewHolder.title.setText(books.getTitle());
-        viewHolder.return_date.setText(books.getReturnDate());
-        viewHolder.place.setText(books.getPlace());
+        viewHolder.title.setText(borrow.getName() + "");
+        viewHolder.return_date.setText(dateToString(borrow.getCreatedAt()));
+        viewHolder.place.setText(borrow.getNameLibrary() + "");
 
         viewHolder.btnTwitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Sharing to twitter..", Toast.LENGTH_SHORT).show();
-                String str = "Aku telah meminjam " + books.getTitle() + " dari " + books.getPlace() + ". Ayo membaca!";
+                String str = "Aku telah meminjam " + borrow.getName() + " dari " + borrow.getNameLibrary() + ". Ayo membaca!";
                 shareTwitter(str);
             }
         });
@@ -117,6 +120,11 @@ public class RecyclerViewBorrowAdapter extends RecyclerView.Adapter<RecyclerView
             Log.wtf("AdapterBorrow", "UTF-8 should always be supported", e);
             return "";
         }
+    }
+
+    public String dateToString(Date date){
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+        return dateFormat.format(date);
     }
 
 }

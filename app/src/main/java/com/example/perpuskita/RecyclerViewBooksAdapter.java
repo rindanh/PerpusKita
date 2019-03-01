@@ -12,9 +12,9 @@ import java.util.List;
 
 public class RecyclerViewBooksAdapter extends RecyclerView.Adapter<RecyclerViewBooksAdapter.ViewHolder> {
 
-    public List<Books> list;
+    public List<Book> list;
 
-    public RecyclerViewBooksAdapter(List<Books> list) {
+    public RecyclerViewBooksAdapter(List<Book> list) {
         this.list = list;
     }
 
@@ -28,11 +28,11 @@ public class RecyclerViewBooksAdapter extends RecyclerView.Adapter<RecyclerViewB
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final Books books = list.get(i);
+        final Book books = list.get(i);
 
-        viewHolder.title.setText(books.getTitle());
-        viewHolder.details.setText(books.getDetails());
-        viewHolder.place.setText(books.getPlace());
+        viewHolder.title.setText(books.getName());
+        viewHolder.details.setText(books.getName());
+        viewHolder.place.setText(books.getName());
     }
 
     @Override

@@ -37,12 +37,12 @@ public class BooksFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_books, container, false);
         recyclerView = v.findViewById(R.id.recyclerview);
-        Books book = new Books();
-        book.setTitle("Totto-chan");
-        book.setDetails("Menceritakan seorang anak bernama totto");
-        book.setPlace("Perpustakaan Pusat ITB");
+        Book book = new Book();
+        book.setName("Totto-chan");
+        //book.setDetails("Menceritakan seorang anak bernama totto");
+        //book.setPlace("Perpustakaan Pusat ITB");
 
-        ArrayList<Books> listOfBooks = new ArrayList<Books>();
+        ArrayList<Book> listOfBooks = new ArrayList<Book>();
         listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);

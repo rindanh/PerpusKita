@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@color/colorAccent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,11 +13,11 @@
     tools:context=".LoginActivity">
 
     <ImageView
+        android:id="@+id/icon"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo_text"
-        android:id="@+id/icon"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_text" />
 
     <ScrollView
         android:id="@+id/login_form"

@@ -30,7 +30,18 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+//import retrofit2.Call;
+//import retrofit2.Callback;
+//import retrofit2.Response;
 
 
 /**
@@ -41,6 +52,7 @@ public class BorrowFragment extends Fragment {
     RecyclerView recyclerView;
     private CardView cardDetails;
     private FloatingActionButton btnAdd;
+    private TextView date_return;
 
     public BorrowFragment() {
         // Required empty public constructor
@@ -54,13 +66,38 @@ public class BorrowFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_borrow, container, false);
         recyclerView = v.findViewById(R.id.recyclerview);
 
-        Books book = new Books();
-        book.setTitle("Totto-chan");
-        book.setReturnDate("25 Februari 2019");
-        book.setPlace("Perpustakaan Pusat ITB");
+        Call<BaseResponse<ArrayList<Borrow>>> call = RetrofitServices.sendRequest().callBorrow(1, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWRtaW4iOnRydWUsImlhdCI6MTU0ODY0NjI3MX0.FfMJGA-aU4lmyUzYOWma6kDtrQaA63KY6TlUiPf0V0w");
+        call.enqueue(new Callback<BaseResponse<ArrayList<Borrow>>>() {
+            @Override
+            public void onResponse(Call<BaseResponse<ArrayList<Borrow>>> call, Response<BaseResponse<ArrayList<Borrow>>> response) {
+                if (response.body() != null) {
+                    ArrayList<Borrow> borrows = new ArrayList<Borrow>();
+                    borrows = response.body().getData();
 
-        ArrayList<Books> listOfBooks = new ArrayList<Books>();
-        listOfBooks.add(book);
+                    RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(borrows, getContext());
+                    recyclerView.setHasFixedSize(true);
+                    final LinearLayoutManager llm = new LinearLayoutManager (getContext());
+                    recyclerView.setLayoutManager(llm);
+                    recyclerView.setAdapter(recyclerViewBorrowAdapter);
+
+                }
+                ;
+            }
+
+            @Override
+            public void onFailure(Call<BaseResponse<ArrayList<Borrow>>> call, Throwable t) {
+                //Toast.makeText(MainActivity.this, "Something was error", Toast.LENGTH_SHORT).show();
+                ;
+            }
+        });
+
+
+        //book.setName("Totto-chan");
+        //book.setReturnDate(convertToDate("2019-02-25"));
+        //book.setPlace("Perpustakaan Pusat ITB");
+
+        //ArrayList<Book> listOfBooks = new ArrayList<Book>();
+        /*listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
         listOfBooks.add(book);
@@ -68,11 +105,17 @@ public class BorrowFragment extends Fragment {
         listOfBooks.add(book);
         listOfBooks.add(book);
 
-        RecyclerViewBorrowAdapter recyclerViewBorrowAdapter= new RecyclerViewBorrowAdapter(listOfBooks, getContext());
-        recyclerView.setHasFixedSize(true);
-        final LinearLayoutManager llm = new LinearLayoutManager (getContext());
-        recyclerView.setLayoutManager(llm);
-        recyclerView.setAdapter(recyclerViewBorrowAdapter);
+        Book book2 = new Book();
+        book.setName("Kalkulus");
+        //book.setReturnDate(convertToDate("2019-03-01"));
+        //book.setPlace("Perpustakaan Pusat ITB");
+        listOfBooks.add(book2);
+        */
+
+
+        //menampilkan tanggalnya
+//        date_return = (TextView) v.findViewById(R.id.return_date);
+//        date_return.setText(dateToString(listOfBooks.get(0)));
 
         btnAdd= v.findViewById(R.id.add);
         btnAdd.setOnClickListener(
@@ -156,5 +199,15 @@ public class BorrowFragment extends Fragment {
                     }
                 });
     }
-
+    public Date convertToDate(String date) {
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        Date t;
+        try {
+            t = ft.parse(date);
+            return t;
+        } catch (ParseException e) {
+            System.out.println("Unparseable using " + ft);
+            return null;
+        }
+    }
 }
