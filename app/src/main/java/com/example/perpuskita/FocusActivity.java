@@ -62,9 +62,11 @@ public class FocusActivity extends AppCompatActivity {
         };
 
         // max value for light sensor
-        maxValue = lightSensor.getMaximumRange();
-//        lightTextView = (TextView) findViewById(R.id.showValue);
 
+        if (lightSensor!= null) {
+            maxValue = lightSensor.getMaximumRange();
+//        lightTextView = (TextView) findViewById(R.id.showValue);
+        }
         lightButton = (Button) findViewById(R.id.buttonLight);
         lightSensorListener = new SensorEventListener() {
             @Override
