@@ -1,5 +1,7 @@
 package com.example.perpuskita;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -22,4 +24,9 @@ public interface ApiServices {
     //MemberAPI
 
 
+    //BorrowAPI
+    @GET("api/android/borrow")
+    Call<BaseResponse<ArrayList<Borrow>>> callBorrow(@Query("memberId") Integer memberId, @Header("Authorization") String auth);
+
+    //LibraryAPI
 }

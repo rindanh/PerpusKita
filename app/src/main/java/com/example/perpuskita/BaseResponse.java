@@ -5,7 +5,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class BaseResponse<T> {
-    @SerializedName("status")
+    @SerializedName("success")
     @Expose
     private String status;
     @SerializedName("message")
@@ -41,7 +41,7 @@ public class BaseResponse<T> {
         return data;
     }
 
-    public void setUser(T data) {
+    public void setData(T data) {
         this.data = data;
     }
 }

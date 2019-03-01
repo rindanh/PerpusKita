@@ -6,7 +6,10 @@ import java.util.Date;
 public class Borrow {
     private Integer id;
     private Integer bookId;
-    private Integer membinterId;
+    private Integer memberId;
+    private String name;
+    private String author;
+    private String nameLibrary;
     private Integer numDay;
     private Date createdAt;
     private Date updatedAt;
@@ -19,12 +22,12 @@ public class Borrow {
         this.bookId = bookId;
     }
 
-    public Integer getMembinterId() {
-        return membinterId;
+    public Integer getMemberId() {
+        return memberId;
     }
 
-    public void setMembinterId(Integer membinterId) {
-        this.membinterId = membinterId;
+    public void setMemberId(Integer memberId) {
+        this.memberId = memberId;
     }
 
     public Integer getNumDay() {
@@ -57,5 +60,29 @@ public class Borrow {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getNameLibrary() {
+        return nameLibrary;
+    }
+
+    public void setNameLibrary(String nameLibrary) {
+        this.nameLibrary = nameLibrary;
     }
 }
