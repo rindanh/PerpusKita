@@ -122,8 +122,8 @@ public class BorrowFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        checkGPStoBorrow();
-//                        startActivity(new Intent(getContext(), QRCodeActivity.class));
+                        //checkGPStoBorrow();
+                        startActivity(new Intent(getContext(), QRCodeActivity.class));
                     }
                 }
         );
